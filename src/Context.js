@@ -14,8 +14,6 @@ const ContextProvider = ({ children }) => {
       .then((data) => setPhotoArr(data));
   }, []);
 
-  console.log(photoArr);
-
   return <Context.Provider value={{ photoArr }}>{children}</Context.Provider>;
 };
 
