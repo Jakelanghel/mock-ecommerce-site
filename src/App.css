@@ -13,6 +13,16 @@ body {
   padding: 0;
 }
 
+.filter-red {
+  filter: invert(57%) sepia(70%) saturate(6733%) hue-rotate(340deg)
+    brightness(97%) contrast(89%);
+}
+
+.filter-white {
+  filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(102deg)
+    brightness(105%) contrast(104%);
+}
+
 main.photos {
   padding: 10px;
   display: grid;
@@ -78,11 +88,18 @@ img.image-grid {
 }
 
 .favorite {
-  color: var(--red);
-  font-size: 1.2rem;
+  width: 25px;
   position: absolute;
   top: 5px;
   left: 5px;
+  cursor: pointer;
+}
+
+.cart {
+  width: 25px;
+  position: absolute;
+  top: 5px;
+  right: 5px;
   cursor: pointer;
 }
 
@@ -93,15 +110,6 @@ img.image-grid {
 .ri-delete-bin-line,
 .ri-delete-bin-fill {
   font-size: 1.3em;
-  cursor: pointer;
-}
-
-.cart {
-  color: var(--blue);
-  font-size: 1.2rem;
-  position: absolute;
-  top: 5px;
-  right: 5px;
   cursor: pointer;
 }
 

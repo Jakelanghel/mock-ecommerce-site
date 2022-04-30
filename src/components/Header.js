@@ -12,7 +12,7 @@ function Header() {
         <img
           src="./images/cart-shopping-solid.svg"
           alt="go to shopping cart"
-          className="cart-img"
+          className="cart-img filter-white"
         />
       </Link>
     </header>
