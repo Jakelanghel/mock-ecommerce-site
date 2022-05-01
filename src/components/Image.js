@@ -1,18 +1,10 @@
 import React, { useState, useContext } from "react";
 import { Context } from "../Context";
+import PropTypes from "prop-types";
 
 const Image = ({ className, img }) => {
   const [hovered, setIsHovered] = useState(false);
-  const { toggleFav } = useContext(Context);
-
-  //   const heartIcon = hovered && (
-  //     <img
-  //       src="./images/heart-regular.svg"
-  //       alt="remove from to favorites"
-  //       className="favorite filter-red"
-  //       onClick={() => toggleFav(img.id)}
-  //     />
-  //   );
+  const { toggleFav, addToCart } = useContext(Context);
 
   const heartIcon = img.isFavorite ? (
     <img
@@ -37,6 +29,7 @@ const Image = ({ className, img }) => {
       src="./images/plus-solid.svg"
       alt="add to cart"
       className="cart filter-red"
+      onClick={() => addToCart(img)}
     />
   );
 
@@ -51,6 +44,16 @@ const Image = ({ className, img }) => {
       {plusIcon}
     </div>
   );
+};
+
+//  To specify prop types of an objects values use PropTypes.shape
+Image.propTypes = {
+  className: PropTypes.string,
+  img: PropTypes.shape({
+    id: PropTypes.string.isRequired,
+    url: PropTypes.string.isRequired,
+    isFavorite: PropTypes.bool,
+  }),
 };
 
 export default Image;

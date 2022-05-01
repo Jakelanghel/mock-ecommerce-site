@@ -5,7 +5,7 @@ function Header() {
   return (
     <header>
       <Link to="/">
-        <h2>Pic Some</h2>
+        <h2 className="logo">Pic Some</h2>
       </Link>
 
       <Link to="/cart">
