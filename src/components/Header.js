@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import { Context } from "../Context";
 
 function Header() {
+  const { cartItems } = useContext(Context);
+
   return (
     <header>
       <Link to="/">
@@ -15,6 +18,9 @@ function Header() {
           className="cart-img filter-white"
         />
       </Link>
+      {cartItems.length > 0 && (
+        <span className="cart-count">{cartItems.length}</span>
+      )}
     </header>
   );
 }

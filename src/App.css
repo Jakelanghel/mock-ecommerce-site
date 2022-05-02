@@ -38,7 +38,9 @@ main.photos {
 }
 
 main.cart-page {
+  width: 90%;
   padding: 10px;
+  margin: 2rem auto;
 }
 
 .cart-page > h1 {
@@ -46,7 +48,7 @@ main.cart-page {
 }
 
 .cart-page .total-cost {
-  text-align: right;
+  text-align: center;
   font-size: 1.3em;
 }
 
@@ -71,10 +73,10 @@ div.order-button > button:disabled {
 }
 
 .cart-item {
+  margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 20px 0;
 }
 
 .cart-item img {
@@ -165,3 +167,25 @@ a:active {
   letter-spacing: 1px;
   text-transform: capitalize;
 }
+
+.cart-count {
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: var(--pink);
+  position: absolute;
+  right: 21px;
+  top: 23px;
+}
+
+.trash-icon {
+  width: 20px;
+}
+
+/* <main className="cart-page">
+      <h1>Check out</h1>
+      {cartItemElements}
+      <p className="total-cost">Total: </p>
+      <div className="order-button">
+        <button>Place Order</button>
+      </div>
+    </main> */

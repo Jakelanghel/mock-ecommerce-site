@@ -4,7 +4,28 @@ import PropTypes from "prop-types";
 
 const Image = ({ className, img }) => {
   const [hovered, setIsHovered] = useState(false);
-  const { toggleFav, addToCart } = useContext(Context);
+  const { toggleFav, addToCart, cartItems, removeFromCart } =
+    useContext(Context);
+
+  const inCart = cartItems.some((image) => image.id === img.id);
+
+  const plusIcon = inCart ? (
+    <img
+      src="./images/cart-shopping-solid.svg"
+      alt="add to cart"
+      className="cart filter-red"
+      onClick={() => removeFromCart(img)}
+    />
+  ) : (
+    hovered && (
+      <img
+        src="./images/plus-solid.svg"
+        alt="add to cart"
+        className="cart filter-red"
+        onClick={() => addToCart(img)}
+      />
+    )
+  );
 
   const heartIcon = img.isFavorite ? (
     <img
@@ -22,15 +43,6 @@ const Image = ({ className, img }) => {
         onClick={() => toggleFav(img.id)}
       />
     )
-  );
-
-  const plusIcon = hovered && (
-    <img
-      src="./images/plus-solid.svg"
-      alt="add to cart"
-      className="cart filter-red"
-      onClick={() => addToCart(img)}
-    />
   );
 
   return (
